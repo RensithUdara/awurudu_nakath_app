@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+
+class BathPage extends StatelessWidget {
+  final String title;
+
+  const BathPage(this.title, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,  // No shadow
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.orangeAccent.shade200, Colors.deepOrange.shade500],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: const BorderRadius.vertical(
+              bottom: Radius.circular(20),  // Rounded bottom corners
+            ),
+          ),
+        ),
+        title: const Text(
+          "පරණ අවුරුද්ද සඳහා ස්නාන​ය",
+          style: TextStyle(
+            fontSize: 22.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        centerTitle: true,  // Center the title
+        backgroundColor: Colors.transparent,  // Transparent background
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.orange.shade50, Colors.orange.shade100],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        alignment: Alignment.center,
+        padding: const EdgeInsets.all(20.0),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Image.asset(
+                'assets/bath.png',
+                height: 250,
+              ),
+              const SizedBox(height: 20),  // Space between the image and text
+              const Text(
+                "අප්‍රේල් මස 13 වෙනි සෙනසුරාදා දින නුගපත් යුෂ මිශ්‍ර නානු ගා "
+                "ස්නානය කොට ඉෂ්ට දේවතා අනුස්මරණයෙහි යෙදී වාසය මැනවි.",
+                style: TextStyle(color: Colors.black, fontSize: 22.0),
+                textAlign: TextAlign.center,  // Center text
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
