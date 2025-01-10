@@ -9,7 +9,7 @@ class NewYearPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,  // No shadow
+        elevation: 0,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -18,20 +18,20 @@ class NewYearPage extends StatelessWidget {
               end: Alignment.bottomRight,
             ),
             borderRadius: const BorderRadius.vertical(
-              bottom: Radius.circular(20),  // Rounded bottom corners
+              bottom: Radius.circular(20),
             ),
           ),
         ),
-        title: const Text(
-          "අලුත් අවුරුදු උදා​ව",
-          style: TextStyle(
+        title: Text(
+          title,
+          style: const TextStyle(
             fontSize: 22.0,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),
-        centerTitle: true,  // Center the title
-        backgroundColor: Colors.transparent,  // Transparent background
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -51,12 +51,12 @@ class NewYearPage extends StatelessWidget {
                 'assets/new_year.png',
                 height: 250,
               ),
-              const SizedBox(height: 20),  // Space between the image and text
+              const SizedBox(height: 20),
               const Text(
                 "අප්‍රේල් මස 14 වෙනි ඉරිදා දින අපර භාග 02.09 ට සිංහල අලුත් "
                 "අවුරුද්ද උදාවෙයි.",
                 style: TextStyle(color: Colors.black, fontSize: 22.0),
-                textAlign: TextAlign.center,  // Center text
+                textAlign: TextAlign.center,
               )
             ],
           ),

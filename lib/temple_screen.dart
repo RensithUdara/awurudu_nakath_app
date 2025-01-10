@@ -9,7 +9,7 @@ class TemplePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,  // No shadow
+        elevation: 0,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -18,20 +18,20 @@ class TemplePage extends StatelessWidget {
               end: Alignment.bottomRight,
             ),
             borderRadius: const BorderRadius.vertical(
-              bottom: Radius.circular(20),  // Rounded bottom corners
+              bottom: Radius.circular(20),
             ),
           ),
         ),
-        title: const Text(
-          "පුණ්‍ය කාල​ය",
-          style: TextStyle(
+        title: Text(
+          title,
+          style: const TextStyle(
             fontSize: 22.0,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),
-        centerTitle: true,  // Center the title
-        backgroundColor: Colors.transparent,  // Transparent background
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -51,14 +51,14 @@ class TemplePage extends StatelessWidget {
                 'assets/temple.png',
                 height: 250,
               ),
-              const SizedBox(height: 20),  // Space between the image and text
+              const SizedBox(height: 20),
               const Text(
                 "අප්‍රේල් මස 14 වෙනි ඉරිදා පූර්ව භාග 07.45 සිට එදින අපර භාග "
                 "08.33 දක්වා පුණ්‍ය කාලය බැවින්, අප්‍රේල් මස 14 වෙනි ඉරිදා දින "
                 "පූර්ව භාග 07.45 ට පළමුව ආහාර පාන ගෙන සියලු වැඩ අත හැර, "
                 "ආගමික වතාවත් වල යෙදීම මැනවි.",
                 style: TextStyle(color: Colors.black, fontSize: 22.0),
-                textAlign: TextAlign.center,  // Center text
+                textAlign: TextAlign.center,
               )
             ],
           ),

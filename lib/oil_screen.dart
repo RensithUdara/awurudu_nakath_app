@@ -9,7 +9,7 @@ class OilPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,  // No shadow
+        elevation: 0,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -18,20 +18,20 @@ class OilPage extends StatelessWidget {
               end: Alignment.bottomRight,
             ),
             borderRadius: const BorderRadius.vertical(
-              bottom: Radius.circular(20),  // Rounded bottom corners
+              bottom: Radius.circular(20),
             ),
           ),
         ),
-        title: const Text(
-          "හිස තෙල් ගෑ​ම",
-          style: TextStyle(
+        title: Text(
+          title,
+          style: const TextStyle(
             fontSize: 22.0,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),
-        centerTitle: true,  // Center the title
-        backgroundColor: Colors.transparent,  // Transparent background
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -51,14 +51,14 @@ class OilPage extends StatelessWidget {
                 'assets/oil.png',
                 height: 250,
               ),
-              const SizedBox(height: 20),  // Space between the image and text
+              const SizedBox(height: 20),
               const Text(
                 "අප්‍රේල් මස 17 වෙනි බදාදා පූර්ව භාග 07.40 ට පළාවන් පැහැති "
                 "වසත්‍රාභරණයෙන් සැරසී, නැගෙනහිර දිශාව බලා, හිසට "
                 "කොහොඹ පත්ද, පයට කොලොන් පත් ද තබා, කොහොඹ පත් යුෂ මිශ්‍ර "
                 "නානු ද තෙල් ද ගා, ස්නානය කිරීම මැනවි.",
                 style: TextStyle(color: Colors.black, fontSize: 22.0),
-                textAlign: TextAlign.center,  // Center text
+                textAlign: TextAlign.center,
               )
             ],
           ),
