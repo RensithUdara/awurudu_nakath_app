@@ -9,7 +9,7 @@ class JobPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,  // No shadow
+        elevation: 0,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -18,20 +18,20 @@ class JobPage extends StatelessWidget {
               end: Alignment.bottomRight,
             ),
             borderRadius: const BorderRadius.vertical(
-              bottom: Radius.circular(20),  // Rounded bottom corners
+              bottom: Radius.circular(20),
             ),
           ),
         ),
-        title: const Text(
-          "රැකී රක්ෂා සඳහා පිටත්ව යා​ම",
-          style: TextStyle(
+        title: Text(
+          title,
+          style: const TextStyle(
             fontSize: 22.0,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),
-        centerTitle: true,  // Center the title
-        backgroundColor: Colors.transparent,  // Transparent background
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -51,14 +51,14 @@ class JobPage extends StatelessWidget {
                 'assets/job.png',
                 height: 250,
               ),
-              const SizedBox(height: 20),  // Space between the image and text
+              const SizedBox(height: 20),
               const Text(
                 "අප්‍රේල් මස 18 වන බ්‍රහස්පතින්දා පූර්ව භාග 04.52 ට පළාවන් "
                 "පැහැති වස්ත්‍රාභරණයෙන් සැරසී, හකුරු සහ තල මෝරු මිශ්‍ර "
                 "කිරිබතක් අනුභව කර, නැගෙනහිර දිශාව බලා, රැකි රක්ෂා "
                 "සඳහා පිටත්ව යාම මැනවි.",
                 style: TextStyle(color: Colors.black, fontSize: 22.0),
-                textAlign: TextAlign.center,  // Center text
+                textAlign: TextAlign.center,
               )
             ],
           ),
