@@ -9,7 +9,7 @@ class EatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,  // No shadow
+        elevation: 0,
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -18,21 +18,20 @@ class EatPage extends StatelessWidget {
               end: Alignment.bottomRight,
             ),
             borderRadius: const BorderRadius.vertical(
-              bottom: Radius.circular(20),  // Rounded bottom corners
+              bottom: Radius.circular(20),
             ),
           ),
         ),
-        title: const Text(
-          "වැඩ ඇල්ලීම හා ආහාර අනුභව​ය",
-          style: TextStyle(
+        title: Text(
+          title,
+          style: const TextStyle(
             fontSize: 20.0,
             fontWeight: FontWeight.bold,
             color: Colors.white,
-             
           ),
         ),
-        centerTitle: true,  // Center the title
-        backgroundColor: Colors.transparent,  // Transparent background
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -52,13 +51,13 @@ class EatPage extends StatelessWidget {
                 'assets/eat.png',
                 height: 250,
               ),
-              const SizedBox(height: 20),  // Space between the image and text
+              const SizedBox(height: 20),
               const Text(
                 "අප්‍රේල් මස 14 වෙනි ඉරිදා අපර භාග 03.54 ට රතු සහ කහ මිශ්‍ර "
                 "(තඹ පැහැති) වස්ත්‍රාභරණයෙන් සැරසී, නැගෙනහිර දිශාව බලා, "
-                "සියලු වැඩ අල්ලා, ගණුදෙණු කොට, ආහාර අනුභවය මැනවි.",
+                "සියලු වැඩ අත හැර, ආහාර අනුභවය මැනවි.",
                 style: TextStyle(color: Colors.black, fontSize: 22.0),
-                textAlign: TextAlign.center,  // Center text
+                textAlign: TextAlign.center,
               )
             ],
           ),
