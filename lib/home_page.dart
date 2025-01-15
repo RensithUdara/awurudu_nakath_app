@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:awurudu_nakath_app/bath_screen.dart';
 import 'package:awurudu_nakath_app/cook_screen.dart';
 import 'package:awurudu_nakath_app/eat_screen.dart';
@@ -8,7 +9,6 @@ import 'package:awurudu_nakath_app/moon_screen.dart';
 import 'package:awurudu_nakath_app/new_year_screen.dart';
 import 'package:awurudu_nakath_app/oil_screen.dart';
 import 'package:awurudu_nakath_app/temple_screen.dart';
-import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -65,11 +65,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(140.0), // Increased height for the new design
+        preferredSize: const Size.fromHeight(160.0),
         child: AppBar(
-          elevation: 10, // Add shadow
+          elevation: 10,
           flexibleSpace: ClipPath(
-            clipper: _CustomAppBarClipper(), // Custom shape for the AppBar
+            clipper: _CustomAppBarClipper(),
             child: Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                     const Text(
                       "2025 අලුත් අවුරුදු නැකත්",
                       style: TextStyle(
-                        fontSize: 24.0,
+                        fontSize: 26.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                         shadows: [
@@ -143,13 +143,13 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Container(
-        color: Colors.white,
-        padding: const EdgeInsets.all(10.0),
+        color: Colors.grey[100],
+        padding: const EdgeInsets.all(16.0),
         child: GridView.count(
           crossAxisCount: 2,
-          crossAxisSpacing: 10.0,
-          mainAxisSpacing: 10.0,
-          childAspectRatio: 0.75,
+          crossAxisSpacing: 16.0,
+          mainAxisSpacing: 16.0,
+          childAspectRatio: 0.8,
           children: <Widget>[
             _buildProductCard(context, "නව සඳ බැලීම", 'assets/moon.png', const MoonPage("නව සඳ බැලීම")),
             _buildProductCard(context, "පරණ අවුරුද්ද සඳහා ස්නානය", 'assets/bath.png', const BathPage("පරණ අවුරුද්ද සඳහා ස්නානය")),
@@ -167,59 +167,71 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildProductCard(BuildContext context, String title, String imagePath, Widget page) {
     return Card(
-      color: Colors.white,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
       elevation: 5.0,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.contain,
-              ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+      ),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16.0),
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (BuildContext context) => page,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Text(
-              title,
-              style: const TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          const SizedBox(height: 10.0),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (BuildContext context) => page,
+          );
+        },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Image.asset(
+                  imagePath,
+                  fit: BoxFit.contain,
                 ),
-              );
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.deepOrange,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
               ),
             ),
-            child: const Text(
-              "නැකත බලමු",
-              style: TextStyle(
-                fontSize: 14.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
-          ),
-          const SizedBox(height: 8.0),
-        ],
+            const SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => page,
+                  ),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.deepOrange,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+              ),
+              child: const Text(
+                "නැකත බලමු",
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            const SizedBox(height: 16.0),
+          ],
+        ),
       ),
     );
   }
@@ -229,7 +241,7 @@ class _CustomAppBarClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     final path = Path();
-    path.lineTo(0, size.height - 30);
+    path.lineTo(0, size.height - 40);
     path.quadraticBezierTo(size.width / 4, size.height, size.width / 2, size.height - 30);
     path.quadraticBezierTo(size.width * 3 / 4, size.height - 60, size.width, size.height - 30);
     path.lineTo(size.width, 0);
